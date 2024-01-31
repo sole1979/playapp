@@ -5,7 +5,6 @@ import javax.inject._
 
 import play.api.libs.json.{Format, JsString, Json}
 import play.api.mvc._
-import models.BooksStore._
 import models.Library._
 //import play.api.mvc.Results.{BadRequest, NoContent}
 import services.ServiceImpl
@@ -14,7 +13,6 @@ import services.ServiceImpl
 @Singleton
 class BookController @Inject()(val serviceImpl: ServiceImpl, val controllerComponents: ControllerComponents) extends BaseController {
 
-  implicit val bookJson = Json.format[BookRare]
   implicit val bookJsonNew = Json.format[Book]
   implicit val userJson = Json.format[User]
 
