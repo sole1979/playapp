@@ -9,8 +9,11 @@ GET     /                           controllers.HomeController.index()
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-GET /books                          controllers.BookController.getAll()
-GET /book/:ISBN                     controllers.BookController.getByISBN(ISBN: Int)
-POST /create                       controllers.BookController.create
-POST /edit                          controllers.BookController.edit
-POST /delete/:ISBN                  controllers.BookController.delete(ISBN: Int)
+GET /books                          controllers.BookController.getBookAll()
+GET /book/:ISBN                     controllers.BookController.getBookByISBN(ISBN: Int)
+POST /book                          controllers.BookController.postBookContr
+POST /delete/book/:ISBN             controllers.BookController.deleteBook(ISBN: Int)
+GET /users                          controllers.BookController.getUserAll()
+GET /user/:id                       controllers.BookController.getUserById(id: Int)
+POST /user                          controllers.BookController.postUserContr
+POST /delete/user/:id               controllers.BookController.deleteUser(id: Int)
